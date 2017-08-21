@@ -1,0 +1,72 @@
+<?php
+class Pessoa{
+
+	//Atributos
+	private $nome;
+	private $idade;
+
+	//sem construtor
+
+	//metodos acessores
+	public function getNome(){
+		return $this->nome;
+	}
+
+	public function setNome($nome){
+		$this->nome = $nome;
+	}
+
+	public function getIdade(){
+		return $this->idade;
+	}
+
+	public function setIdade($idade){
+		$this->idade = $idade;
+	}
+
+	public function calcularIdadeMeses() : int {
+		return $this->idade * 12;
+	}
+
+	public function calcularIdadeSemanas() : int {
+		return $this->idade * 52;
+	}
+
+	public function calcularIdadeDias() : int{
+		return $this->idade * 365;
+	}
+
+	public function calcularRaizIdade() : float{
+		return sqrt($this->idade);
+	}
+
+	public function calcularPotencia($exp) : int{
+		return pow($this->idade, $exp);
+	}
+
+}//fecha class
+?>
+
+INDEX
+
+include 'pessoa.class.php';
+
+//instanciar um objeto da classe Pessoa
+
+$p = new Pessoa;
+
+//entrada de dados fixa
+
+$p->setNome('Dip');
+$p->setIdade(21);
+
+//saida de dados
+echo '<p>Nome: '.$p->getNome().
+	'<br>Idade: '.$p->getIdade().
+	'<br>Idade em Meses: '.$p->calcularIdadeMeses().
+	'<br>Idade em Semanas: '.$p->calcularIdadeSemanas().
+	'<br>Idade em Dias: '.$p->calcularIdadeDias().
+	'<br>Raiz da Idade: '.$p->calcularRaizIdade().
+	'<br>Idade ao quad: '.$p->calcularPotencia(2).'</p>';
+
+?>
